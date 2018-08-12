@@ -45,6 +45,11 @@ public class FileUtilities {
 		}
 	}
 	
+	/**
+	 * Writes the specified text to file
+	 * @param file
+	 * @param text
+	 */
 	public static void writeToFile(File file, String text){
 		PrintWriter writer = null;
 		try {
@@ -54,6 +59,28 @@ public class FileUtilities {
 			e.printStackTrace();
 		} 
 		writer.println(text);
+		writer.close();
+	}
+	
+	/**
+	 * Writes the specified text and array to the specified file
+	 * @param filePath
+	 * @param arr
+	 */
+	public static void writeToFile(String filePath, String text, int[] arr ) {
+		PrintWriter writer = null;
+		File file = new File(filePath);
+		try {
+			writer = new PrintWriter(new FileWriter(file, true)); //true to append
+		} catch (IOException e) {
+			System.err.println("Error while trying to write text to " + file.getAbsolutePath());
+			e.printStackTrace();
+		} 
+		writer.println(text);
+		for(int i : arr) {
+			writer.print(i + " ");
+		}
+		writer.println("");
 		writer.close();
 	}
 

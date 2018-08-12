@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/LWJGL3"/>
+	<classpathentry kind="lib" path="F:/Game development/Eclipse/Libraries/Java Low Level System Hook v3.2/system-hook-3.2.jar"/>
+	<classpathentry kind="lib" path="F:/Game development/Eclipse/Libraries/Java Native Hook/jnativehook-2.1.0.jar"/>
+	<classpathentry kind="lib" path="F:/Game development/Eclipse/Libraries/JNA/jna-4.5.1.jar"/>
+	<classpathentry kind="lib" path="F:/Game development/Eclipse/Libraries/JNA/jna-platform-4.5.1.jar"/>
+	<classpathentry kind="lib" path="F:/Game development/Eclipse/Libraries/PNGDecoder/PNGDecoder.jar"/>
+	<classpathentry kind="lib" path="F:/Game development/Eclipse/Libraries/MIGLayout/miglayout-4.0-swing.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

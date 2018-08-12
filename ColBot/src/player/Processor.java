@@ -42,6 +42,9 @@ public class Processor {
 		programDir = "C:\\ProgramData\\Microsoft\\Windows\\Start Menu\\Programs\\Jagex";
 		launcherName = "RuneScape Launcher.url";
 		
+		String programDir1 = "D:\\Aljoša\\runescape\\RuneScape Launcher";
+		String launcherName1 = "RuneScape.exe";
+		
 		if (process == null) {
 			System.out.println("[Processor.startProcessing]:" + processName + " hasn't been found...");
 			SystemAccess.executeProgram(programDir, launcherName);

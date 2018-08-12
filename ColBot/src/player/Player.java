@@ -3,6 +3,9 @@ package player;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
+import gui.GuiStates;
+import gui.ImageProcessor;
+import main.Settings;
 import scripts.FishingScript;
 import scripts.Script;
 import system.Screenshotter;
@@ -43,7 +46,17 @@ public class Player implements Runnable {
 			if(currentWindow.getLocation()[0] != 0 && currentWindow.getLocation()[1] != 0) {
 				WindowManager.setWindowLocation(0, 0);
 			}
-			fishingScript.startFishing();
+			/*
+			if (Settings.currentGuiState == GuiStates.DEVELOPER) {
+				System.out.println("[Player.run]: Processing image!");
+				ImageProcessor.startImageProcessing();
+			}*/
+			boolean shouldRender = Settings.getShouldRender();
+			System.out.print("" + Settings.getShouldRender()); //weird bug :/ if this is called, correct results, else incorrect... wtf
+			if (shouldRender == true) {
+				ImageProcessor.startImageProcessing();
+			}
+			//fishingScript.startFishing();
 		}
 	}
 	

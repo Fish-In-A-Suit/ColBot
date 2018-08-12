@@ -1,10 +1,12 @@
 package utilities;
 
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 
 /**
  * This class provides various functionality regarding images, such as saving them on disk, reading them, etc
@@ -15,7 +17,7 @@ public class ImageUtilities {
 	static int numRuns = 0;
 	
 	public static void saveImage(BufferedImage img,  String formatName, String output) {
-		System.out.println("Saving image " + img.toString() + " to " + output);
+		//System.out.println("Saving image " + img.toString() + " to " + output);
 		String outputPath = "resources/images/"+output;
 		File outputFile = new File(outputPath);
 
@@ -79,5 +81,23 @@ public class ImageUtilities {
 			}
 		}	
 		return img;
+	}
+	
+	/**
+	 * This method returns an ImageIcon object, made from the specified image (specified by imageName inside directory resources/icons/gui/). Note that
+	 * the file extension (eg, png, jpg, etc) has to be specified!
+	 * @param imagePath
+	 * @return
+	 */
+	public static ImageIcon getImageAsIcon(String imageName) {
+		String imgPath = "resources/icons/gui/" + imageName;
+		try {
+			Image img = ImageIO.read(new File(imgPath));
+			return new ImageIcon(img);
+		} catch (IOException e) {
+			System.err.println("[ImageUtilities.getImageAsIcon]: Failed to get image as an icon! Path: " + imgPath);
+			e.printStackTrace();
+			return null;
+		}
 	}
 }
